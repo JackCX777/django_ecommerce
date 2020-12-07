@@ -23,3 +23,6 @@ def product(request, category_slug, product_slug):
 
 def about(request):
     return render(request, 'about.html')
+
+def cart(request):
+    return render(request, 'cart.html')
