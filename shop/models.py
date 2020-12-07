@@ -62,7 +62,7 @@ class CartItem(models.Model):
     quantity = models.IntegerField()
     active = models.BooleanField(default=True)
 
-    class Meta():
+    class Meta:
         db_table = 'CartItem'
 
     def sub_total(self):
