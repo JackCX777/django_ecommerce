@@ -4,6 +4,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group, User
 from .forms import SignUpForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
 
 
 def home(request, category_slug=None):
@@ -98,3 +100,25 @@ def signup_view(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                return redirect('signup')
+    else:
+        form = AuthenticationForm()
+        return render(request, 'login.html', {'form': form})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
