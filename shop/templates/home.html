@@ -10,7 +10,7 @@
 
 <div class="conteiner-fluid">
   <div class="row">
-    <img class="img-fluid" src="{% static 'images/sale1.jpg' %}" width="100%">
+    <img class="img-fluid" src="{% static 'images/sale1.jpg' %}" width="90%" style="display: block; margin: 0 auto;">
   </div>
 </div>
 
@@ -30,12 +30,11 @@
   <div class="row">
     {% for product in products %}
       <div class="col-9 mx-auto col-md-6 col-lg-3">
-        <div class="card mb-5">
+        <div class="card mb-5" style="height: 350px;">
           <div class="p-4">
             <a href="{{product.get_url}}"><img class="card-imd-top" src="{{product.image.url}}" alt="{{product.name}}" width="100%"></a>
           </div>
-          <div class="card-footer d-flex justify-content-between" style="background: transparent;
-           border-color: transparent;">
+          <div class="card-footer d-flex justify-content-between" style="background: transparent; border-color: transparent;">
             <p class="font-weight-bold mb-0">
               {{product.name}}
             </p>
