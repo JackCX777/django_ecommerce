@@ -12,10 +12,17 @@
                     <div class="dropdown-menu bg-secondary" style="width: 400px !important; height: 300px !important;">
                         {% for category in links %}
                         <div>
-                            <a class="dropdown-item bg-secondary text-light" href="{{category.get_url}}">
-                                <img src="{{category.image.url}}" width="15%">
-                                {{category.name}}
-                            </a>
+                            {% if category.name == "All parrots" %}
+                                <a class="dropdown-item bg-secondary text-light" href="{% url 'home' %}">
+                                    <img src="{{category.image.url}}" width="15%">
+                                    {{category.name}}
+                                </a>
+                            {% else %}
+                                <a class="dropdown-item bg-secondary text-light" href="{{category.get_url}}">
+                                    <img src="{{category.image.url}}" width="15%">
+                                    {{category.name}}
+                                </a>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </div>
