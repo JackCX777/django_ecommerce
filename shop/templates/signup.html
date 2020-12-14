@@ -13,13 +13,13 @@
   	{% if not form.is_valid %}
   	<div>
   		<br>
-  		<h1 class="product_title text-center">
+  		<h1 class="product_title text-center text-light">
   			Create a new account
   		</h1>
   		<br>
   		<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
   			<p>
-  				Please input folowing information for create a new account:
+  				Please input following information for create a new account:
   			</p>
   			<form method="post">
   				{% csrf_token %}
@@ -33,16 +33,17 @@
   		</div>
   	</div>
   	{% else %}
-  	<div>
+  	<div class="product_title text-center text-light">
   		<br>
-  		<h1>
+  		<h1 class="">
   			Your account has been successfully created!
   		</h1>
   		<br>
   		<div>
   			<p>
-  				Your account has been created and ready to use.
+  			    Welcome to Pet Shop!
   			</p>
+			<br>
   			<a href="{% url 'home' %}">Continue shopping</a>
   		</div>
   	</div>

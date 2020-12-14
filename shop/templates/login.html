@@ -9,27 +9,17 @@
 {% endblock %}
 
 {% block content %}
-  <div class="conteiner">
+  <div class="container" style="margin-left: 0 auto; margin-right: 0 auto; width: 50%;">
   	<br>
-  	<h1 class="product_title text-center">
-  		Log in or create a New Account
+  	<h1 class="product_title text-center text-light">
+  		Log in or create a New Account:
   	</h1>
-  	<div class="row">
-  		<div class="col-12 col-sm-12 col-lg-6 text-center custom_div">
-  			<br>
-  			<h2 class="product_title">
-  				New User
-  			</h2>
-  			<br>
-  			<a href="{% url 'signup' %}" class="btn btn-secondary">
-  				Create New User
-  			</a>
-  		</div>
-  		<div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
+  	<div class="col">
+  		<div class="col-12 col-sm-12 col-md-12 col-lg-12 bg-light">
   			<div>
   				<br>
   				<h2 class="product_title">
-  					For Registered Users
+  					For Registered Users:
   				</h2>
   				<form method="post">
   					{% csrf_token %}
@@ -42,6 +32,16 @@
   				</form>
   				<br>
   			</div>
+  		</div>
+		<div class="col-12 col-sm-12 col-lg-12 text-center custom_div">
+  			<br>
+  			<h2 class="product_title text-light">
+  				New Here? Start with
+  			</h2>
+  			<br>
+  			<a href="{% url 'signup' %}" class="btn btn-secondary">
+  				Create New User
+  			</a>
   		</div>
   	</div>
   	<br>
