@@ -1,19 +1,40 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
   About
 {% endblock %}
 
 {% block content %}
-<div class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-10 mx-auto my-2 text-center">
-        <h1 class="text-capitalize font-weight-bold text-light">
-         About page
-        </h1>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-10 mx-auto my-1 text-center">
+          <h1 class="product_title text-light">
+            About Pet Shop
+          </h1>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="container py-1">
+      <div class="row mt-1">
+          <div class="col-10 mx-auto col-md-6 my-1">
+              <img src="{% static 'images/Parrot_ara_studio.jpg' %}" width="100%">
+          </div>
+      </div>
+  </div>
+  <div class="col-10 mx-auto col-md-6 my-5">
+    <div>
+      <p class="product_desc text-light">
+        Who we are:
+      </p>
+      <div style="border: 2px none black; padding: 10px;">
+        <p class="text-justify product_text text-light">
+          This is the test e-commerce Pet Shop.
+        </p>
+      </div>
+    </div>
+  </div>
 {% endblock %}
